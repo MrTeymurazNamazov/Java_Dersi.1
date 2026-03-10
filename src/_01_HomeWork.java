@@ -16,7 +16,7 @@ public class _01_HomeWork {
 //                yeni value-ni put etmek ucun key oldugu kimi qalir, value-ni ferqli yazsaniz update olacaq
         Scanner inputInt = new Scanner(System.in);
         Scanner inputStr = new Scanner(System.in);
-        int cavab = 0;
+       String cavab ="";
         String soz = "";
         String tercume = "";
         TreeMap<String, String> tmap1 = new TreeMap<>();
@@ -29,16 +29,13 @@ public class _01_HomeWork {
             System.out.println("4 - Axtarış etmək .");
             System.out.println("5 - Söz Silmək.");
             System.out.println("6 - Çıxış.");
-            System.out.print("1-6 rəgəm kimi daxil edin:\n");
+            System.out.println("1-6 rəgəm kimi daxil edin:\n");
 
-            cavab = inputInt.nextInt();
+            cavab = inputStr.nextLine();
 
-            if (cavab <= 0 || cavab > 6) {
-                System.out.println("\nYanlış rəgəm daxil etdiniz!!!\n");
-            }
 
             switch (cavab) {
-                case 1:
+                case "1":
 
                     System.out.println("\nYeni sözü daxil edin:\n");
                     soz = inputStr.nextLine();
@@ -53,7 +50,7 @@ public class _01_HomeWork {
 
                     }
                     break;
-                case 2:
+                case "2":
                     System.out.println("\nRedakt etmək istədiyiniz sözü daxil edin:\n");
                     soz = inputStr.nextLine();
 
@@ -68,10 +65,10 @@ public class _01_HomeWork {
                     }
 
                     break;
-                case 3:
+                case "3":
                     System.out.println("\nLüğət :" + tmap1);
                     break;
-                case 4:
+                case "4":
                     System.out.println("\nAxtardığınız söz daxil edin:\n");
                     soz = inputStr.nextLine();
                     if (tmap1.containsKey(soz.trim())) {
@@ -80,7 +77,7 @@ public class _01_HomeWork {
                         System.out.println("\nBu söz mövcud deyil!!!\n");
                     }
                     break;
-                case 5:
+                case "5":
                     System.out.println("\nSilmək istədiyiniz sözü daxil edin:\n");
                     soz = inputStr.nextLine();
                     if (tmap1.containsKey(soz.trim())) {
@@ -89,11 +86,17 @@ public class _01_HomeWork {
                     } else {
                         System.out.println("\nBu söz mövcud deyil!!!\n");
                     }
+                case "6":
+                    System.out.println("\nLüğətə cixis edildi!!!\n");
                     break;
-            }
-        } while (cavab != 6);
 
-        System.out.println("\nLüğətə cixis edildi!!!\n");
+                default:
+                    System.out.println("Səhv seçim! Zəhmət olmasa 1-6 arası rəqəm daxil edin.");
+            }
+
+        } while (!cavab.equals("6"));
+
+
     }
 
     }
